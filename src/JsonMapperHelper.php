@@ -21,8 +21,8 @@ class JsonMapperHelper
                 $object->{$propName} = $jsonValue;
                 $object->customFields[$propName] = $jsonValue;
             }
-        } else {
-            $object->{$propName} = $jsonValue;
-        }
+		} elseif(isset($object->{$propName})) {
+			$object->{$propName} = $jsonValue;
+		}
     }
 }
